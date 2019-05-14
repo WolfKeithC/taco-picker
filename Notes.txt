@@ -1,0 +1,19 @@
+apache-maven-3.6.1-bin
+C:\Program Files\Java\jdk1.8.0_131
+
+https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+
+https://maven.apache.org/install.html
+
+https://docs.spring.io/spring-boot/docs/current/maven-plugin/
+
+C:\Program Files\Java\jdk1.8.0_131\lib\tools.jar
+
+mvn package
+
+java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+
+F:\Repos\taco-picker>java -cp target/taco-picker-1.0-SNAPSHOT.jar main.java.com.wolftrain.app.App
+Hello World!
+
+https://spring.io/guides/gs/rest-service/
