@@ -32,3 +32,6 @@ git clone https://github.com/Azure-Samples/storage-blobs-java-quickstart.git
 https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-java
 
 https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html
+
+https://raw.githubusercontent.com/spring-projects/spring-boot/v2.1.4.RELEASE/spring-boot-project/spring-boot-cli/src/main/content/INSTALL.txt
+

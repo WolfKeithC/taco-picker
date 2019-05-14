@@ -17,6 +17,31 @@ public class TacoController {
                             String.format(template, name));
     }
     
+    /*
+    @RequestMapping("/dropdowns")
+    public String Dropdowns()
+    {
+    	
+    	
+    	
+    }
     
 
+    private void loadDropdowns(Dictionary<String, Object> jsonData)
+    {
+        foreach (string key in jsonData.Keys)
+        {
+            switch (key)
+            {
+                case "tacos":
+                    tacos = JsonConvert.DeserializeObject<List<TacoTypes>>(jsonData[key].ToString());
+                    break;
+
+                case "tortilla":
+                    tortillas = JsonConvert.DeserializeObject<List<string>>(jsonData[key].ToString());
+                    break;
+            }
+        }
+    }
+    */
 }
