@@ -1,7 +1,5 @@
-main\java\com\wolftrain\app\TacoEntry.class
-main\java\com\wolftrain\app\TacoTotals.class
-main\java\com\wolftrain\app\TacoController.class
 main\java\com\wolftrain\app\Greeting.class
 main\java\com\wolftrain\app\TacoOrder.class
+main\java\com\wolftrain\app\TacoEntry.class
 main\java\com\wolftrain\app\App.class
-main\java\com\wolftrain\app\TacoTypes.class
+main\java\com\wolftrain\app\TacoTotals.class
