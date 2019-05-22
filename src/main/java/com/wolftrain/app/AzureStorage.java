@@ -12,6 +12,7 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.net.URISyntaxException;
 import java.util.Date;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
@@ -37,13 +38,17 @@ public class AzureStorage {
 	* Instructions: Update the storageConnectionString variable with your AccountName and Key and then run the sample.
 	* *************************************************************************************************************************
 	*/
-	private final String storageConnectionString =
-			"DefaultEndpointsProtocol=https;AccountName=tacodata001;AccountKey=rARzp0A5to2FL2mQN6vVT6OrXVuAVJNbtUs8Z/hPwWdx79WhFQk6yqgdECl4N/N5McOnRmtepmX+9kFnNW4IJg==;BlobEndpoint=https://tacodata001.blob.core.windows.net/;QueueEndpoint=https://tacodata001.queue.core.windows.net/;TableEndpoint=https://tacodata001.table.core.windows.net/;FileEndpoint=https://tacodata001.file.core.windows.net/;";
-	
-	private final String storageContainerName =
-			"tacodata001";
+	private final String storageConnectionString = "";
+	private final String storageContainerName = "";
 	
 	public AzureStorage() {
+		
+		PropertiesHelper pHelp = new PropertiesHelper();
+		
+		Properties prop = pHelp.getProperties();
+		
+		storageConnectionString = prop.getProperty("azure.connectionstring");
+		storageContainerName = prop.getProperty("azure.containername");
 		
 		// Parse the connection string and create a blob client to interact with Blob storage
 		CloudStorageAccount mainContainer = CloudStorageAccount.parse(this.storageConnectionString);
