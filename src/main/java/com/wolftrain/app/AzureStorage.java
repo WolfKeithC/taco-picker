@@ -38,21 +38,19 @@ public class AzureStorage {
 	* Instructions: Update the storageConnectionString variable with your AccountName and Key and then run the sample.
 	* *************************************************************************************************************************
 	*/
-	private final String storageConnectionString = "";
-	private final String storageContainerName = "";
+	private String storageConnectionString = "";
+	private String storageContainerName = "";
 	
-	public AzureStorage() {
+	public AzureStorage() throws URISyntaxException, Exception {
 		
 		PropertiesHelper pHelp = new PropertiesHelper();
-		
 		Properties prop = pHelp.getProperties();
-		
-		storageConnectionString = prop.getProperty("azure.connectionstring");
-		storageContainerName = prop.getProperty("azure.containername");
+		this.storageConnectionString = prop.getProperty("azure.connectionstring");
+		this.storageContainerName = prop.getProperty("azure.containername");
 		
 		// Parse the connection string and create a blob client to interact with Blob storage
-		CloudStorageAccount mainContainer = CloudStorageAccount.parse(this.storageConnectionString);
-		CloudBlobClient blobClient = mainContainer.createCloudBlobClient();
+		CloudStorageAccount storageAccount = CloudStorageAccount.parse(this.storageConnectionString);
+		CloudBlobClient blobClient = storageAccount.createCloudBlobClient();
 		mainContainer = blobClient.getContainerReference(this.storageContainerName);
 	}
 	
@@ -74,23 +72,20 @@ public class AzureStorage {
     	//grab a folder reference directly from the container
         CloudBlobDirectory folder = mainContainer.getDirectoryReference(intakeId);
 
-        Iterable<ListBlobItem> blobItems = folder.listBlobs();
+        //Iterable<ListBlobItem> blobItems = folder.listBlobs();
         
-        int counter = 0;
-        for (Object i : blobItems) {
+        int counter = 0, i = 0;
+        for (ListBlobItem blobItem : mainContainer.listBlobs()) {
             counter++;
         }
-
-        int i = 0;//, count = mainContainer.listBlobs().;
-        String[] files = new String[counter];
         
 		//Listing contents of container
+        String[] files = new String[counter];
 		for (ListBlobItem blobItem : mainContainer.listBlobs()) {
-			String path = blobItem.getUri().getQuery();
+			String path = blobItem.getUri().toString();
             files[i] = path.substring(path.lastIndexOf('/') + 1);
             i++;
         }
-
         return files;
     }    
 
@@ -126,7 +121,7 @@ public class AzureStorage {
 
     public Date GetFileLastWriteTime(String intakeId, String fileName) throws Exception {
     	CloudBlobDirectory folder = mainContainer.getDirectoryReference(intakeId);
-        CloudBlob blob = folder.getPageBlobReference(fileName);
+    	CloudBlockBlob blob = folder.getBlockBlobReference(fileName);
         if (blob.exists())
             return blob.getProperties().getLastModified();
         return new Date(Long.MIN_VALUE);
@@ -134,7 +129,7 @@ public class AzureStorage {
 
     public Boolean Exists(String intakeId, String fileName) throws Exception {
     	CloudBlobDirectory folder = mainContainer.getDirectoryReference(intakeId);
-        CloudBlob blob = folder.getPageBlobReference(fileName);
+    	CloudBlockBlob blob = folder.getBlockBlobReference(fileName);
         if (blob != null)
             return blob.exists();
         return false;

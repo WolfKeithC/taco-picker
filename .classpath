@@ -22,7 +22,7 @@
 	<classpathentry kind="lib" path="C:/App/Spring/libs/spring-webmvc-5.1.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/App/Spring/libs/spring-websocket-5.1.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/App/spring-boot/lib/spring-boot-cli-2.1.4.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/WOLFK036/.m2/repository/com/microsoft/azure/azure-storage/5.0.0/azure-storage-5.0.0.jar" sourcepath="C:/Users/WOLFK036/.m2/repository/com/microsoft/azure/azure-storage/5.0.0/azure-storage-5.0.0-sources.jar">
+	<classpathentry exported="true" kind="lib" path="C:/Users/WOLFK036/.m2/repository/com/microsoft/azure/azure-storage/5.0.0/azure-storage-5.0.0.jar" sourcepath="C:/Users/WOLFK036/.m2/repository/com/microsoft/azure/azure-storage/5.0.0/azure-storage-5.0.0-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="com.microsoft.azure"/>
@@ -31,5 +31,6 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/WOLFK036/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.6.0/jackson-core-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
