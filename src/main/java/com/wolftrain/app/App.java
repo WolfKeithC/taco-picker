@@ -30,7 +30,7 @@ public class App
         try 
         {
 	    	AzureStorage azure = new AzureStorage();
-	    	String[] files = azure.ListAllFiles("appdata01");
+	    	String[] files = azure.ListAllFiles("App_Data");
 	    	for(String f : files){
 	    		System.out.println( f );
 	    	}

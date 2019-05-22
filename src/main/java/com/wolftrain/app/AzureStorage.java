@@ -72,16 +72,16 @@ public class AzureStorage {
     	//grab a folder reference directly from the container
         CloudBlobDirectory folder = mainContainer.getDirectoryReference(intakeId);
 
-        //Iterable<ListBlobItem> blobItems = folder.listBlobs();
+        Iterable<ListBlobItem> blobItems = folder.listBlobs();
         
         int counter = 0, i = 0;
-        for (ListBlobItem blobItem : mainContainer.listBlobs()) {
+        for (ListBlobItem blobItem : blobItems) {
             counter++;
         }
         
 		//Listing contents of container
         String[] files = new String[counter];
-		for (ListBlobItem blobItem : mainContainer.listBlobs()) {
+		for (ListBlobItem blobItem : blobItems) {
 			String path = blobItem.getUri().toString();
             files[i] = path.substring(path.lastIndexOf('/') + 1);
             i++;
