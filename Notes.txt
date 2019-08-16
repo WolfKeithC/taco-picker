@@ -37,3 +37,4 @@ https://raw.githubusercontent.com/spring-projects/spring-boot/v2.1.4.RELEASE/spr
 
 git clone https://github.com/Azure-Samples/storage-blobs-java-quickstart.git
 
+https://stackoverflow.com/questions/15332733/how-to-convert-list-data-into-json-in-java

@@ -1,5 +1,6 @@
 package main.java.com.wolftrain.app;
 
+import java.util.LinkedList;
 import java.util.Properties;
 
 /**
@@ -33,6 +34,11 @@ public class App
 	    	String[] files = azure.ListAllFiles("App_Data");
 	    	for(String f : files){
 	    		System.out.println( f );
+	    	}
+	    	System.out.println("---------------------");
+	    	LinkedList<TacoEntry> orders = TacoHelper.LoadTacoData("5");
+	    	for(TacoEntry t : orders) {
+	    		System.out.println( t.getName() + " " + t.getTacos().size());
 	    	}
         } catch (Exception e) {
         	System.out.println("Error: ");

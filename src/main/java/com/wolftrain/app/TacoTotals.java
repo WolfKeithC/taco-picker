@@ -20,7 +20,7 @@ public class TacoTotals
     	this.Total = total;
     	this.Notes = Note;    	
     }
-    
+
 	public LinkedList<TacoEntry> getOrders() { return this.Orders; } 
 	public float getSubtotal() { return this.SubTotal; }
 	public float getTax() { return this.TaxTotal; }

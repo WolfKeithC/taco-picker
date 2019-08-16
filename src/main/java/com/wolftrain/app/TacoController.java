@@ -1,5 +1,6 @@
 package main.java.com.wolftrain.app;
 
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,10 +32,10 @@ public class TacoController {
     }
     
     @RequestMapping("/details")
-    public String Details(string id)
+    public TacoOrder Details(String id)
     {
-        List<TacoEntry> orders = loadTacoData(id);
-        return Json(new { data = orders }, JsonRequestBehavior.AllowGet);
+        LinkedList<TacoEntry> orders = TacoHelper.LoadTacoData(id);
+        return orders;
     }
     
     
