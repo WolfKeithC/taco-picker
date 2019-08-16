@@ -19,14 +19,24 @@ public class TacoController {
     
     
     @RequestMapping("/dropdowns")
-    public String Dropdowns()
+    public String Dropdowns() throws Exception
     {
-
-    	
-    	
-    	
-    	return "help";
+    	AzureStorage a = new AzureStorage();
+    	return new String(a.GetFile("Tacos", "tacosdata.json"));
+        //string strJson = Helpers.ByteStreamToString(fileCommands);
+        //Dictionary<String, Object> jsonData = JsonConvert.DeserializeObject<Dictionary<String, Object>>(strJson);
+        //loadDropdowns(jsonData);
+        //object data = Newtonsoft.Json.JsonConvert.DeserializeObject(strJson);
+        //return retVal;
     }
+    
+    @RequestMapping("/details")
+    public String Details(string id)
+    {
+        List<TacoEntry> orders = loadTacoData(id);
+        return Json(new { data = orders }, JsonRequestBehavior.AllowGet);
+    }
+    
     
     /*
     private void loadDropdowns(Dictionary<String, Object> jsonData)
