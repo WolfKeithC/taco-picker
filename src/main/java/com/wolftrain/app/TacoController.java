@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.JsonSyntaxException;
+
 @RestController
 public class TacoController {
 	
@@ -32,9 +34,9 @@ public class TacoController {
     }
     
     @RequestMapping("/details")
-    public TacoOrder Details(String id)
+    public LinkedList<TacoEntry> Details(String id) throws JsonSyntaxException, Exception
     {
-        LinkedList<TacoEntry> orders = TacoHelper.LoadTacoData(id);
+    	LinkedList<TacoEntry> orders = TacoHelper.LoadTacoData(id);
         return orders;
     }
     

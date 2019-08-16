@@ -33,5 +33,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/WOLFK036/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.6.0/jackson-core-2.6.0.jar"/>
 	<classpathentry kind="lib" path="C:/App/gson-2.6.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
